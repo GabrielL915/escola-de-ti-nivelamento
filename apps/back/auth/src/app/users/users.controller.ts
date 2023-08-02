@@ -20,9 +20,9 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
-  async create(@Body() user: CreateUserDto): Promise<UserTypes> {
+  async create(@Body() user: CreateUserDto) {
     try {
-      return await this.usersService.create(user);
+      return await this.usersService.create(user)
     } catch (error) {
       throw new HttpException(error.message, error.status);
     }
@@ -40,7 +40,7 @@ export class UsersController {
     @Param('username') username: string
   ): Promise<UserTypes | null> {
     try {
-      return await this.usersService.findOne(username);
+      return await this.usersService.findOne(username)
     } catch (error) {
       throw new HttpException(error.message, error.status);
     }

@@ -5,10 +5,12 @@
 
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import * as dotenv from 'dotenv';
 
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
+  dotenv.config();
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new ValidationPipe());
   app.enableCors();

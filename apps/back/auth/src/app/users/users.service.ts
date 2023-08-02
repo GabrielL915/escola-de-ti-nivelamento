@@ -7,22 +7,26 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { hash } from 'bcrypt';
 
-
 @Injectable()
 export class UsersService {
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
 
-  async create(user: User): Promise<UserTypes> {
+  async create(user: User) {
     user.password = await this.hashPassword(user.password);
     const createdUser = new this.userModel(user);
-    return await createdUser.save();
+    await createdUser.save();
   }
 
   async findAll(): Promise<UserTypes[] | undefined> {
-    return await this.userModel.find();
+    return await this.userModel.find().select('-password');
   }
 
-  async findOne(username: string): Promise<UserTypes | null> {
+  async findOne(username: string) {
+    return await this.userModel
+      .findOne({ username: username }).select('-password');
+  }
+
+  async findByName(username: string) {
     return await this.userModel.findOne({ username: username });
   }
 
