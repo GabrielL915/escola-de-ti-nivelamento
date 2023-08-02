@@ -13,7 +13,7 @@ export class AuthService {
   async signIn(username: string, pass: string) {
     const user = await this.usersService.findByName(username);
     if (user) {
-      const checkPassword = await compare(pass, user.password);
+      await compare(pass, user.password);
       const payload = { sub: user.password, username: user.username };
 
       return {

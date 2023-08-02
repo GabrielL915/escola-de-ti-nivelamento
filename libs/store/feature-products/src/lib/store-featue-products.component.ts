@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'store-store-featue-products',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./store-featue-products.component.scss'],
 })
 export class StoreFeatueProductsComponent {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   form = new FormGroup({
     name: new FormControl(''),
@@ -26,8 +27,12 @@ export class StoreFeatueProductsComponent {
         description: this.form.value.description,
         price: Number(this.form.value.price),
         quantity: Number(this.form.value.quantity),
-      }
+      };
       this.http.post('/api/products', data).subscribe(console.log);
     }
+  }
+
+  gotoAuthUsers() {
+    this.router.navigate(['/auth-users']);
   }
 }
