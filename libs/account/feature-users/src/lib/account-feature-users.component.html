@@ -12,36 +12,5 @@
   </button>
 </mat-toolbar>
 
-<main><!-- 
-  <section>
-    <pre> {{ users$ | async | json }}</pre>
-  </section> -->
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <h1>account-featue-user works!</h1>
+<router-outlet></router-outlet>
 
-    <mat-form-field appearance="outline">
-      <mat-label>Username</mat-label>
-      <input formControlName="username" matInput placeholder="Placeholder" />
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>password</mat-label>
-      <input
-        type="password"
-        formControlName="password"
-        matInput
-        placeholder="Placeholder"
-      />
-    </mat-form-field>
-
-    <button
-      class="submitButton"
-      mat-raised-button
-      color="primary"
-      type="submit"
-      color="primary"
-    >
-      Login
-    </button>
-  </form>
-</main>

@@ -1,0 +1,51 @@
+<main><!-- 
+    <section>
+      <pre> {{ users$ | async | json }}</pre>
+    </section> -->
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h1>sign-up works!</h1>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput placeholder="Placeholder" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input formControlName="username" matInput placeholder="Placeholder" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Age</mat-label>
+        <input formControlName="username" matInput placeholder="Placeholder" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input formControlName="username" matInput placeholder="Placeholder" />
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>password</mat-label>
+        <input
+          type="password"
+          formControlName="password"
+          matInput
+          placeholder="Placeholder"
+        />
+      </mat-form-field>
+      <button class="sign-in-Button" (click)="goToSignIn()">Already have a account?</button>
+
+
+      <button
+        class="submitButton"
+        mat-raised-button
+        color="primary"
+        type="submit"
+        color="primary"
+      >
+        Login
+      </button>
+    </form>
+  </main>
+  

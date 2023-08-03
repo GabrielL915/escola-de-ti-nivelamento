@@ -1,0 +1,31 @@
+:host {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  
+    main {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    .sign-in-Button{
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid #727272;
+      padding-bottom: 4px;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  }

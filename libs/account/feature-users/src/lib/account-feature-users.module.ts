@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { SignInComponent } from './containers/sign-in/sign-in.component';
+import { SignUpComponent } from './containers/sign-up/sign-up.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,10 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     ReactiveFormsModule,
   ],
-  declarations: [AccountFeatureUsersComponent],
+  declarations: [
+    AccountFeatureUsersComponent,
+    SignInComponent,
+    SignUpComponent,
+  ],
 })
 export class AccountFeatureUsersModule {}
